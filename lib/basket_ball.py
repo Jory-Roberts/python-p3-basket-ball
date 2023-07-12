@@ -184,6 +184,7 @@ def game_dict():
     }
 
 
+
 def num_points_per_game(player_name):
     teams = ["home", "away"]
 
@@ -191,6 +192,7 @@ def num_points_per_game(player_name):
         for player in game_dict()[team]['players']:
             if player.get('name') == player_name:
                 return player.get('points_per_game')
+
 
 
 def player_age(player_name):
@@ -202,12 +204,14 @@ def player_age(player_name):
                 return player.get('age')
 
 
+
 def team_colors(team_name):
     for team in game_dict():
         if game_dict()[team]['team_name'] == team_name:
             color = game_dict()[team]['colors']
 
     return color
+
 
 
 def team_names():
@@ -222,6 +226,7 @@ def team_names():
     return teams_dict
 
 
+
 def player_numbers(team_name):
     numbers = []
     teams = ['home', 'away']
@@ -231,6 +236,7 @@ def player_numbers(team_name):
             numbers.extend([num['number'] for num in game_dict()[team]['players']])
 
     return numbers
+
 
 
 def player_stats(player_name):
